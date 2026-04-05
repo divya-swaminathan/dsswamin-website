@@ -1,0 +1,18 @@
+---
+layout: layout.njk
+---
+<section class="section wrap" aria-labelledby="post-heading">
+  <article class="post prose post-body">
+    <p class="post-meta">
+      <time datetime="{{ date | dateIso }}">{{ date | readableDate }}</time>
+    </p>
+    <h1 id="post-heading" class="post-title">{{ title }}</h1>
+    {% if description %}
+      <p class="post-deck">{{ description }}</p>
+    {% endif %}
+    <div class="post-content prose">{{ content | safe }}</div>
+  </article>
+  <p class="wrap post-back">
+    <a href="{{ rootRel(page.url) }}blog/">← All posts</a>
+  </p>
+</section>

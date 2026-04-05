@@ -1,0 +1,50 @@
+/** CSS / nav: relative path back to site root (works on custom domain and GitHub project Pages). */
+function rootRel(pageUrl) {
+  if (!pageUrl || pageUrl === "/") return "";
+  if (/^\/[^/]+\.[a-zA-Z0-9]+$/.test(pageUrl)) return "";
+  const segments = pageUrl.split("/").filter(Boolean);
+  const depth = segments.length;
+  if (depth === 0) return "";
+  return "../".repeat(depth);
+}
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addShortcode("nowIso", () => new Date().toISOString());
+
+  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("styles.css");
+  eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy(".nojekyll");
+
+  eleventyConfig.addFilter("rootRel", (pageUrl) => rootRel(pageUrl));
+
+  eleventyConfig.addFilter("dateIso", (value) => {
+    const d = value ? new Date(value) : new Date();
+    return d.toISOString();
+  });
+
+  eleventyConfig.addFilter("readableDate", (value) => {
+    const d = value ? new Date(value) : new Date();
+    return d.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  });
+
+  eleventyConfig.addCollection("postsSorted", (collectionApi) =>
+    collectionApi.getFilteredByTag("posts").sort((a, b) => b.date - a.date)
+  );
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+      data: "_data",
+    },
+    templateFormats: ["md", "njk", "html"],
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+  };
+};
