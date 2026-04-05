@@ -52,6 +52,7 @@ npm run build   # output in _site/
 | `src/_includes/` | HTML layouts |
 | `src/styles.css` | Styles |
 | `src/images/` | Static images |
+| `src/files/` | Downloads (e.g. `divya-swaminathan-resume.pdf`) |
 | `src/_data/site.json` | Site title, canonical URL for feed |
 
 ## GitHub Pages

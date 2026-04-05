@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("nowIso", () => new Date().toISOString());
 
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy(".nojekyll");

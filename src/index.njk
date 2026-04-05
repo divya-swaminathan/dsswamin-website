@@ -5,20 +5,24 @@ permalink: index.html
 <section class="hero wrap" aria-labelledby="hero-heading">
   <div class="hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Distributed systems · AWS</p>
       <h1 id="hero-heading" class="hero-title">Divya Swaminathan</h1>
       <p class="hero-lead">
-        I design and ship <strong>large-scale distributed systems</strong> on
-        AWS — with a focus on correctness under load, multi-region
-        operations, and systems that stay observable as they grow. Today
-        that work is on <strong>Amazon Bedrock</strong>: commerce and
-        billing pipelines behind generative AI services, where small
-        mistakes surface as cross-provider, cross-region problems at
-        high volume.
+        I design and build <strong>large-scale distributed systems</strong> on AWS
+        — focused on reliability, multi-region consistency, and high-stakes data
+        pipelines.
+      </p>
+      <p class="hero-lead hero-lead-secondary">
+        Currently working on <strong>commerce and billing infrastructure</strong>
+        behind generative AI systems at Amazon.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Get in touch</a>
-        <a class="btn btn-ghost" href="#work">Selected work</a>
+        <a class="btn btn-primary" href="#work">View work</a>
+        <a
+          class="btn btn-ghost"
+          href="files/divya-swaminathan-resume.pdf"
+          download
+          >Download résumé</a
+        >
         <a class="btn btn-ghost" href="blog/">Blog</a>
       </div>
     </div>
@@ -39,30 +43,27 @@ permalink: index.html
   <h2 id="about-heading" class="section-title">About</h2>
   <div class="prose">
     <p>
-      I’m drawn to problems where <strong>data, money, and global scale</strong>
-      meet: streaming and batch pipelines, workflow orchestration across
-      long-running jobs, configuration that must stay consistent across
-      partitions and regions, and on-call tooling that makes failures
-      diagnosable. On <strong>Bedrock Commerce</strong>, that shows up as
-      metering, allocation, and settlement workflows that have to stay
-      accurate through model launches, region expansion, and hard operational
-      deadlines.
+      I work on problems where <strong>data, money, and global scale</strong> intersect
+      — streaming and batch pipelines, long-running workflow orchestration, and
+      systems that must remain consistent across regions under real-world failure
+      conditions.
     </p>
     <p>
-      I’ve been at <strong>Amazon for nine years and counting</strong>. I
-      spend a lot of time on <strong>architecture reviews, design docs,
-      and mentoring</strong> — turning ambiguous requirements into systems
-      with clear failure modes and measurable behavior. Earlier, I built
-      and operated <strong>Amazon Kinesis Video Streams</strong> control
-      and data-plane features, including public AWS APIs and
-      fleet-wide infrastructure change under strict availability targets.
+      At Amazon, I’ve spent <strong>9+ years</strong> building and operating distributed
+      systems across services like <strong>Bedrock</strong> and
+      <strong>Kinesis Video Streams</strong>. My current work focuses on metering,
+      allocation, and settlement pipelines powering generative AI platforms — where
+      correctness, latency, and operational clarity are critical.
     </p>
     <p>
-      Outside of work I’m a <strong>dog person</strong> (golden retriever,
-      <strong>Splash</strong>), a parent to a <strong>three-year-old</strong>,
-      and I reset with <strong>racquetball</strong>, <strong>Seattle-area
-      hiking</strong>, summer walks, <strong>books</strong>, and
-      <strong>travel</strong> when I can.
+      I spend a lot of time on <strong>architecture reviews, system design, and
+      mentoring</strong>, turning ambiguous requirements into systems with clear
+      failure modes and measurable behavior.
+    </p>
+    <p>
+      Outside of work, I’m a parent to a <strong>three-year-old</strong>, a dog person
+      (golden retriever, <strong>Splash</strong>), and I recharge with
+      <strong>books</strong>, <strong>travel</strong>, and <strong>long walks</strong>.
     </p>
   </div>
 </section>
@@ -74,58 +75,139 @@ permalink: index.html
       <li>
         <article class="card">
           <h3 class="card-title">Distributed validation at launch scale</h3>
-          <p class="card-meta">Technical lead · Amazon Bedrock</p>
+          <p class="card-meta">Technical Lead — Amazon Bedrock</p>
           <p class="card-desc">
-            Designed an orchestrated validation platform spanning providers
-            and regions: mixed sequential/parallel workflows,
-            long-running jobs with callbacks, cross-system model identity,
-            and dashboards for operators. Goal: catch configuration and
-            metering drift before it becomes a distributed billing incident.
+            Built an orchestrated validation platform spanning providers and regions
+            to ensure correctness of billing and metering pipelines before production
+            rollout.
           </p>
-          <a class="card-link" href="#contact">Discuss</a>
+          <ul class="card-bullets">
+            <li>
+              Designed hybrid sequential/parallel workflows for long-running validation
+              jobs
+            </li>
+            <li>
+              Enabled cross-provider model identity tracking and consistency checks
+            </li>
+            <li>
+              Introduced operator dashboards and alerting for early anomaly detection
+            </li>
+          </ul>
+          <p class="card-impact">
+            <strong>Impact:</strong> Prevented configuration and metering drift from
+            becoming production billing incidents across multi-region deployments.
+          </p>
         </article>
       </li>
       <li>
         <article class="card">
           <h3 class="card-title">Zero-touch onboarding across services</h3>
-          <p class="card-meta">Cross-team lead · Amazon Bedrock</p>
+          <p class="card-meta">Cross-team Lead — Amazon Bedrock</p>
           <p class="card-desc">
-            Led automation across metering, pricing, and reporting so new
-            models and regions could roll out without brittle,
-            multi-day manual coordination. Emphasized backward-compatible
-            rollouts, contract-style integration boundaries between
-            services, and test strategy appropriate to a money-adjacent
-            system.
+            Led automation across metering, pricing, and reporting systems to enable
+            seamless onboarding of new models and regions.
           </p>
-          <a class="card-link" href="#contact">Discuss</a>
+          <ul class="card-bullets">
+            <li>Defined contract-based integration boundaries between services</li>
+            <li>Eliminated multi-day manual coordination across teams</li>
+            <li>
+              Designed rollout mechanisms with backward compatibility guarantees
+            </li>
+          </ul>
+          <p class="card-impact">
+            <strong>Impact:</strong> Reduced onboarding time from days to near-zero
+            while improving system reliability and rollout safety.
+          </p>
         </article>
       </li>
       <li>
         <article class="card">
           <h3 class="card-title">Runtime configuration for critical paths</h3>
-          <p class="card-meta">Design &amp; delivery · Amazon Bedrock</p>
+          <p class="card-meta">Design &amp; Delivery — Amazon Bedrock</p>
           <p class="card-desc">
-            Decoupled high-churn billing configuration from service
-            deploys: schema-validated updates, safer promotion and
-            rollback, and latency suitable for request-path usage — so
-            on-call can react during freezes without trading away
-            cross-region consistency guarantees.
+            Built a configuration system to decouple high-churn billing logic from
+            service deployments.
           </p>
-          <a class="card-link" href="#contact">Discuss</a>
+          <ul class="card-bullets">
+            <li>
+              Designed schema-validated configuration updates with safe promotion and
+              rollback
+            </li>
+            <li>Enabled low-latency access for request-path usage</li>
+            <li>
+              Maintained cross-region consistency guarantees under failure scenarios
+            </li>
+          </ul>
+          <p class="card-impact">
+            <strong>Impact:</strong> Increased deployment velocity while preserving
+            correctness in money-critical systems.
+          </p>
         </article>
       </li>
       <li>
         <article class="card">
           <h3 class="card-title">Global streaming &amp; control plane</h3>
-          <p class="card-meta">SDE · AWS (prior scope)</p>
+          <p class="card-meta">SDE — AWS Kinesis Video Streams</p>
           <p class="card-desc">
-            <strong>Kinesis Video Streams:</strong> large fleet migrations
-            with traffic-shift rollback patterns; public control-plane APIs
-            through AWS launch bar; high-throughput pipeline work reducing
-            cost and tail latency for streaming and downstream consumers.
+            Built and operated large-scale streaming and control plane systems
+            supporting fleet-wide infrastructure changes.
           </p>
-          <a class="card-link" href="#contact">Discuss</a>
+          <ul class="card-bullets">
+            <li>Developed public APIs and control plane workflows</li>
+            <li>
+              Enabled large-scale migrations with traffic-shifting and rollback
+              strategies
+            </li>
+            <li>Improved throughput and reduced latency for downstream consumers</li>
+          </ul>
+          <p class="card-impact">
+            <strong>Impact:</strong> Delivered reliable, high-throughput streaming
+            infrastructure at AWS scale with improved cost efficiency.
+          </p>
         </article>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section
+  id="principles"
+  class="section wrap"
+  aria-labelledby="principles-heading"
+>
+  <h2 id="principles-heading" class="section-title">How I approach system design</h2>
+  <ul class="principles-list">
+    <li>Design for failure first, not happy path</li>
+    <li>Optimize for operational clarity, not just correctness</li>
+    <li>Prefer decoupling and contract boundaries over tight integrations</li>
+    <li>Balance velocity vs. safety based on system criticality</li>
+    <li>Treat observability as a first-class feature</li>
+  </ul>
+</section>
+
+<section id="writing" class="section section-tint" aria-labelledby="writing-heading">
+  <div class="wrap">
+    <h2 id="writing-heading" class="section-title">Writing</h2>
+    <p class="prose writing-intro">
+      Notes on building systems that stay correct under load —
+      <a href="blog/">all posts</a> ·
+      <a href="{{ rootRel(page.url) }}feed.xml">Atom feed</a>
+    </p>
+    <ul class="writing-links" role="list">
+      <li>
+        <a href="blog/2026-04-08-designing-billing-systems-that-dont-fail-silently/"
+          >Designing billing systems that don’t fail silently</a
+        >
+      </li>
+      <li>
+        <a href="blog/2026-04-07-tradeoffs-dynamodb-s3-data-lake-for-config/"
+          >Tradeoffs: DynamoDB vs S3 vs data lake for config</a
+        >
+      </li>
+      <li>
+        <a href="blog/2026-04-06-lessons-from-operating-multi-region-aws-systems/"
+          >Lessons from operating multi-region AWS systems</a
+        >
       </li>
     </ul>
   </div>
