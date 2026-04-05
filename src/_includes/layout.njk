@@ -20,26 +20,26 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{ rootRel(page.url) }}styles.css" />
+    <link rel="stylesheet" href="{{ page.url | rootRel }}styles.css" />
     <link
       rel="alternate"
       type="application/atom+xml"
       title="{{ site.author }}"
-      href="{{ rootRel(page.url) }}feed.xml"
+      href="{{ page.url | rootRel }}feed.xml"
     />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="logo" href="{{ rootRel(page.url) }}index.html">DS</a>
+        <a class="logo" href="{{ page.url | rootRel }}index.html">DS</a>
         <nav class="nav" aria-label="Primary">
-          <a href="{{ rootRel(page.url) }}blog/">Blog</a>
-          <a href="{{ rootRel(page.url) }}#about">About</a>
-          <a href="{{ rootRel(page.url) }}#work">Work</a>
-          <a href="{{ rootRel(page.url) }}#principles">Principles</a>
-          <a href="{{ rootRel(page.url) }}#writing">Writing</a>
-          <a href="{{ rootRel(page.url) }}#contact">Contact</a>
+          <a href="{{ page.url | rootRel }}blog/">Blog</a>
+          <a href="{{ page.url | rootRel }}#about">About</a>
+          <a href="{{ page.url | rootRel }}#work">Work</a>
+          <a href="{{ page.url | rootRel }}#principles">Principles</a>
+          <a href="{{ page.url | rootRel }}#writing">Writing</a>
+          <a href="{{ page.url | rootRel }}#contact">Contact</a>
         </nav>
       </div>
     </header>

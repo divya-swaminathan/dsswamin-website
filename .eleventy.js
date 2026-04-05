@@ -17,21 +17,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy(".nojekyll");
 
-  eleventyConfig.addFilter("rootRel", (pageUrl) => rootRel(pageUrl));
-
-  eleventyConfig.addFilter("dateIso", (value) => {
+  const dateIso = (value) => {
     const d = value ? new Date(value) : new Date();
     return d.toISOString();
-  });
-
-  eleventyConfig.addFilter("readableDate", (value) => {
+  };
+  const readableDate = (value) => {
     const d = value ? new Date(value) : new Date();
     return d.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
     });
-  });
+  };
+
+  eleventyConfig.addFilter("rootRel", (pageUrl) => rootRel(pageUrl));
+  eleventyConfig.addFilter("dateIso", dateIso);
+  eleventyConfig.addFilter("readableDate", readableDate);
 
   eleventyConfig.addCollection("postsSorted", (collectionApi) =>
     collectionApi.getFilteredByTag("posts").sort((a, b) => b.date - a.date)

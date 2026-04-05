@@ -13,6 +13,6 @@ layout: layout.njk
     <div class="post-content prose">{{ content | safe }}</div>
   </article>
   <p class="wrap post-back">
-    <a href="{{ rootRel(page.url) }}blog/">← All posts</a>
+    <a href="{{ page.url | rootRel }}blog/">← All posts</a>
   </p>
 </section>
