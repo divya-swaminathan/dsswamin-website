@@ -11,11 +11,12 @@ function rootRel(pageUrl) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("nowIso", () => new Date().toISOString());
 
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("files");
-  eleventyConfig.addPassthroughCopy("styles.css");
-  eleventyConfig.addPassthroughCopy("CNAME");
-  eleventyConfig.addPassthroughCopy(".nojekyll");
+  // Paths are resolved from the project root (not the Eleventy input dir).
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/files");
+  eleventyConfig.addPassthroughCopy("src/styles.css");
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
   const dateIso = (value) => {
     const d = value ? new Date(value) : new Date();
